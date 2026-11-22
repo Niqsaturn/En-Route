@@ -26,6 +26,12 @@
     return existing;
   };
   const display = text => { status.textContent = text; };
+  const friendly = (error, fallback) => {
+    const message = String(error?.message || '');
+    if (/Failed to fetch|NetworkError|Load failed/i.test(message))
+      return 'Unable to reach the verification service from this browser. Some VPNs or browser network protections can block account requests. Try another device or network.';
+    return message || fallback;
+  };
   const buttons = (form, busy) => {
     for (const el of form.querySelectorAll('button')) el.disabled = busy;
     form.setAttribute('aria-busy', String(busy));
@@ -71,7 +77,7 @@
       startForm.reset();
       verifyStep();
       display('If eligible, a secure verification code is on its way. Check your email.');
-    } catch (error) { display(error.message || 'Signup unavailable.'); }
+    } catch (error) { display(friendly(error, 'Signup unavailable.')); }
     finally { buttons(startForm, false); }
   });
   verifyForm.addEventListener('submit', async event => {
@@ -88,7 +94,7 @@
       sessionStorage.removeItem(KEY);
       sessionStorage.removeItem(PENDING);
       display('Account verified. You can now sign in from the game launcher.');
-    } catch (error) { display(error.message || 'Verification unavailable.'); }
+    } catch (error) { display(friendly(error, 'Verification unavailable.')); }
     finally { buttons(verifyForm, false); }
   });
   document.getElementById('resend-verify')?.addEventListener('click', async event => {
@@ -96,7 +102,7 @@
     try {
       await api('resend', {});
       display('If this request is eligible, another verification email is on its way.');
-    } catch (error) { display(error.message || 'Resend unavailable.'); }
+    } catch (error) { display(friendly(error, 'Resend unavailable.')); }
     finally { setTimeout(() => { event.currentTarget.disabled = false; }, 60000); }
   });
   document.getElementById('restart-signup')?.addEventListener('click', () => {

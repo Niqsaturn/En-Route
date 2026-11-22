@@ -39,3 +39,7 @@
 5. Replace disabled installer CTAs only with an audited, preferably Authenticode-signed first-install Windows launcher; test clean install, upgrade, rollback and uninstall.
 6. Check site accessibility, CSP for cross-origin API, download integrity, mobile performance and metadata.
 7. Owner signs off public GitHub Pages publication separately.
+
+## Legacy Tailscale website retirement — verified 2026-11-22
+
+The outdated public **website-only** `/enroute` handler on the existing 8443 Tailscale ingress was removed by exact-path configuration, leaving the root handler byte-for-byte unchanged. Post-change HTTP checks: old `/enroute/` returns **404**, account `/enroute-account/healthz` returns **200**, and signed updates `/enroute-updates/latest.signed.json` returns **200**. The public API Funnel remains intentionally available for the future JavaScript signup integration. GitHub Pages remains unpublished; do not confuse retirement of the old handler with the removal of account or patch infrastructure.

@@ -20,3 +20,11 @@ PRELAUNCH SOURCE ONLY. Public GitHub branch is viewable; no GitHub Pages site, D
 
 No production account, SQL, payment, media-hosting or game service should be changed by this site-review process.
 - GitHub transport note: the full MP4 is represented by `assets/trailer-parts/manifest.json` plus eight `.bin` chunks and verified in the browser before playback. Do not delete parts or the loader unless replacing with a verified direct MP4 URL.
+
+## GitHub Pages registration gate (2026-11-22)
+
+- The `prelaunch/github-pages-signup` branch contains the new registration + verification form and absolute HTTPS API calls. The page address remains unchanged during calls.
+- Live GitHub-origin preflight currently returns HTTP 403. The account server's three-route exact-origin CORS patch is tested only in the owner's staging area; no production account service has been modified.
+- Mock browser CORS, registration and verification flow passed at 1440, 1280, 768 and 390 pixels. These tests do not establish live email delivery, live CORS, first-time launcher sign-in or public GitHub Pages availability.
+- Check the latest signed update feed before changing the version label; the observed published version was 0.2.21.
+- Preserve the original publication hold: enable Pages, merge, update DNS and promote the installer only with the owner's explicit approval.

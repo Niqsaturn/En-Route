@@ -4,10 +4,10 @@
 PRELAUNCH SOURCE ONLY. Public GitHub branch is viewable; no GitHub Pages site, DNS update, Vercel deployment, or production URL has been created.
 
 ## Media provenance
-- Version: En-Route Windows game 0.2.20 signed update channel.
+- Website patch badge: signed Windows build **0.2.21** (2026-11-22). The trailer and screenshots are authentic build **0.2.20** captures; 0.2.21 subsequently shipped a Board-Cr-ft camera/selection hotfix. Never relabel older media as newly captured.
 - `assets/hero-gameplay.webp`: actual Campaign gameplay screenshot, captured from the 0.2.20 `Game/dist` browser build with a temporary consented local guest.
 - `assets/blitzkrieg.webp`, `ulti.webp`, `boardcraft.webp`: genuine screen captures from that local build.
-- `assets/enroute-0.2.20-gameplay.mp4`: 36-second montage assembled from three live game sessions, showing campaign moves, an Ulti fight and Board-Cr-ft. The video is a silent in-engine recording, not a cinematic trailer.
+- `assets/enroute-blitzkrieg-trailer-v0.2.20.mp4`: 68-second edited gameplay trailer composed from two sessions per mode, kinetic typography and original synthesized stereo music. Video and music are original to this project; no third-party commercial track or concept-art video is represented as gameplay.
 - All capture sessions used a fresh isolated browser and no player data.
 
 ## Publication gates
@@ -19,3 +19,4 @@ PRELAUNCH SOURCE ONLY. Public GitHub branch is viewable; no GitHub Pages site, D
 6. Only after explicit owner approval: merge/publish/deploy and remove `noindex,nofollow`.
 
 No production account, SQL, payment, media-hosting or game service should be changed by this site-review process.
+- GitHub transport note: the full MP4 is represented by `assets/trailer-parts/manifest.json` plus eight `.bin` chunks and verified in the browser before playback. Do not delete parts or the loader unless replacing with a verified direct MP4 URL.

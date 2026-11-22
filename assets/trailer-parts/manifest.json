@@ -1,0 +1,49 @@
+{
+  "file": "enroute-blitzkrieg-trailer-v0.2.20.mp4",
+  "version": "0.2.20",
+  "duration_seconds": 68,
+  "bytes": 4084542,
+  "sha256": "9d20ec44faf24861ce224b686153544ab3ac67205ec0e19fbbf7e0668e70f4cd",
+  "parts": [
+    {
+      "file": "part-00.bin",
+      "bytes": 524286,
+      "sha256": "2375f14db012e6d243e71706724e8cfcc47248f1b3ab70acebecbd7206b107bc"
+    },
+    {
+      "file": "part-01.bin",
+      "bytes": 524286,
+      "sha256": "6f6f395bc1ef6e499486afc9b136d3cc88060cb35860fcdc8283b10aeee8195b"
+    },
+    {
+      "file": "part-02.bin",
+      "bytes": 524286,
+      "sha256": "1ef3c387c4939485e90236c0126aa8c77347be1d2e31e827e5747444c66448a8"
+    },
+    {
+      "file": "part-03.bin",
+      "bytes": 524286,
+      "sha256": "e8ff72994c0c458fb7e95a6444473217abd9438515793e9e64de7d2d818880e4"
+    },
+    {
+      "file": "part-04.bin",
+      "bytes": 524286,
+      "sha256": "0bab52591a60b44b06e555d86ede2e014acc7eb81c1476c96c9256e03b3b67d0"
+    },
+    {
+      "file": "part-05.bin",
+      "bytes": 524286,
+      "sha256": "3b74f53af18a56e51b94adac43ca65c627a2ef867a9d85e41056cbd013f9e3ff"
+    },
+    {
+      "file": "part-06.bin",
+      "bytes": 524286,
+      "sha256": "b9746de54e30a34576c68d59453d4e8f9cf07141c04630c20c202f1f49e3f10c"
+    },
+    {
+      "file": "part-07.bin",
+      "bytes": 414540,
+      "sha256": "ef2bca53761df17b8a05ec8c8da6924982bb5257657481cbfa8c288ef98a4714"
+    }
+  ]
+}

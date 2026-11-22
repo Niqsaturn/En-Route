@@ -34,3 +34,11 @@
 - Stripe Billing docs: use test clocks for subscription lifecycles; keep test subscriptions lean; sign and idempotently process asynchronous webhooks and do not rely on event order.
 
 **Outcome:** no live Stripe charges; no public website deployment; staged edits and code/test evidence preserved.
+## Later verification (same day)
+- Full three-mode automated game suite rerun after Ulti combat-focus and payment test-label changes: **249/249 passed**.
+- All account unit tests rerun including the new Stripe signed-refund/reversal and test-mode assertions: **45/45 passed**.
+- TypeScript noEmit and Vite production build both passed.
+- Browser Ulti combat-focused UI passed at 390, 900 and 1280 px; TACTICS reveal/re-hide and WebGL initialization validated.
+- Board-Cr-ft canvas/overlay resize checks passed at 390, 900, 1280 and 1440 px after guest-profile persistence was allowed to complete.
+- Fresh live HTTPS ingress checks: GitHub-origin registration preflight **403** (not ready), account health **200**, signed updates **200**, retired legacy website **404**.
+- Site remains a staging-only branch, with no payment checkout embedded in website and no GitHub Pages deployment.

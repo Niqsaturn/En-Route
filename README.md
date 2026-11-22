@@ -1,4 +1,12 @@
-# En-Route: Blitzkrieg — Prelaunch website design
+# En-Route: Blitzkrieg — Live website
+
+**Published November 22, 2026:** [Visit the En-Route website](https://niqsaturn.github.io/En-Route/). GitHub Pages serves the `gh-pages` branch. The free Windows 0.2.21 portable ZIP, gameplay trailer and verified-email signup are linked on the site. The Windows executable itself is not Authenticode-signed; optional purchases, owner/GM privileges and staged 0.2.22 gameplay changes are not live.
+
+See [current site release status](SITE_RELEASE_STATUS_20261122.md) for the verified publishing, browser and backend checks.
+
+## Archived prepublication design notes
+
+*The material below records the earlier staging phase and is not the current deployment status.*
 
 This branch holds a **review-only** static promotional website. The source is on a public GitHub branch, but **the website is not deployed**, and no GitHub Pages publishing has been configured.
 

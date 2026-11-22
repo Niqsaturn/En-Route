@@ -9,7 +9,7 @@
 - **Across modes:** battlefield-first UI, clear legal actions and attack tells, accessible optional details, tactile audiovisual feedback, no clutter during combat, configurable motion/graphics, trustworthy save integrity, no paid PvP advantage.
 
 ## Completed in unpublished candidate
-- Stripe account connector now has **Test Mode**. Test catalog has **no products, prices, subscriptions, checkout sessions or webhook endpoints** as inspected. Live Mode is a distinct option and must not be used for testing.
+- Stripe account connector now has **Test Mode**. The test catalog was empty at first inspection; two sandbox products and their prices were subsequently created (see update below). Live Mode is a distinct option and must not be used for testing.
 - Stripe Tax test settings are **pending** (missing head-office address); tax registrations absent. No test pricing, checkout sessions or tax assumptions created until merchant tax decision.
 - Billing backend validates signed webhooks, idempotency and session ownership. Fixed a **reversed-checkout replay defect**: independently delivered later completion webhooks no longer restore a refunded or disputed Developer Support Pack. Added tests for refund/dispute and incorrect signature/mode, all passing.
 - Billing status now explicitly identifies test mode; in-game membership UI labels sandbox checkout and portal as test transactions.
@@ -42,3 +42,17 @@
 - Board-Cr-ft canvas/overlay resize checks passed at 390, 900, 1280 and 1440 px after guest-profile persistence was allowed to complete.
 - Fresh live HTTPS ingress checks: GitHub-origin registration preflight **403** (not ready), account health **200**, signed updates **200**, retired legacy website **404**.
 - Site remains a staging-only branch, with no payment checkout embedded in website and no GitHub Pages deployment.
+
+## Stripe sandbox configuration — no tax collection
+
+On 2026-11-22 the owner confirmed **they will not collect sales tax, VAT, or GST** for En-Route purchases. Accordingly, the unpublished account backend now explicitly sends `automatic_tax[enabled]=false`; Stripe Tax is not activated. This describes a payment setting and does not determine legal tax obligations.
+
+Two Stripe Test Mode products were created with default prices:
+- Royal Pass Membership — `prod_VfwJtETCDI51uA`, `price_1UeaQhGH2tFr2xezrPi3WRmA`, **199 USD cents per month**.
+- Developer Support Pack — `prod_VfwJXlVmWl0r0H`, `price_1UeaQmGH2tFr2xezg96TsuY1`, **299 USD cents one-time**, no auto-renewal.
+
+Verified through Stripe Test Mode only: two unpaid Checkout sessions, correct recurring/one-time modes and USD amounts, `automatic_tax.enabled=false`, zero charges, zero PaymentIntents, zero subscriptions. The test sessions alone do **not** exercise account webhook delivery or grant in-game entitlements.
+
+Local account environment names: `ENROUTE_STRIPE_MODE=test`, `ENROUTE_STRIPE_PRICE_MONTHLY`, `ENROUTE_STRIPE_PRICE_DEV_PACK`, `ENROUTE_STRIPE_SECRET_KEY` (an owner-managed `sk_test_` secret), and `ENROUTE_STRIPE_WEBHOOK_SECRET` (test-only destination secret). Never put API keys or signing secrets in this repository or the game client. Keep test webhook handling and MariaDB isolated from live accounts until full end-to-end validation.
+
+The completed code test run now passes **47/47 account tests**, including backend no-tax Checkout fields, signed webhook reversal protection and sandbox/live-mode separation. Existing game suite was **249/249**. The production account backend still has checkout disabled, and GitHub Pages is not enabled. Remaining gates: isolated test backend with real Stripe test keys, signed webhooks, test card lifecycle, production GitHub-origin signup CORS and installer/trailer creative approval. **Publication stays blocked.**

@@ -10,13 +10,14 @@
 <link rel="icon" href="./assets/crown.svg" type="image/svg+xml">
 <link rel="stylesheet" href="./styles.css">
 <script defer src="./assets/trailer-loader.js"></script>
+<script defer src="./assets/account-signup.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="header">
  <div class="header-inner">
   <a class="logo" href="#top" aria-label="En-Route Blitzkrieg home"><span class="logo-mark">♔</span><span class="logo-copy"><b>EN-ROUTE</b><small>BLITZKRIEG</small></span></a>
-  <nav aria-label="Page sections"><a href="#trailer">Gameplay</a><a href="#modes">Game modes</a></nav>
+  <nav aria-label="Page sections"><a href="#trailer">Gameplay</a><a href="#modes">Game modes</a><a href="#signup">Create account</a></nav>
   <span class="version">WINDOWS / BUILD 0.2.21</span>
  </div>
 </header>
@@ -28,6 +29,7 @@
   <div class="cta-group">
    <a class="primary-cta" href="./downloads/EnRoutePatcher.exe" download="EnRoutePatcher.exe" aria-label="Download the En-Route launcher for 64-bit Windows"><span class="win-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m2 4 9-1.2V11H2V4Zm11-1.5L22 1v10h-9V2.5ZM2 13h9v8.2L2 20v-7Zm11 0h9v10l-9-1.5V13Z"/></svg></span><span class="cta-copy"><b>DOWNLOAD LAUNCHER</b><small>FREE TO PLAY · WINDOWS 64-BIT</small></span><span class="cta-arrow" aria-hidden="true">↗</span></a>
    <span class="cta-detail">Install once · Launcher keeps the game updated</span>
+   <a class="text-action" href="#signup">Create your free account</a>
    <a class="text-action" href="#trailer">Watch the latest gameplay <span aria-hidden="true">↓</span></a>
   </div>
   <div class="hero-shot" aria-label="Genuine En-Route game capture from version 0.2.20">
@@ -42,6 +44,29 @@
   <div class="video-shell"><video data-trailer-player controls preload="metadata" playsinline poster="./assets/trailer-poster.webp" aria-label="Play the 68-second En-Route Blitzkrieg gameplay trailer with original music"><track kind="chapters" src="./assets/gameplay-chapters.vtt" srclang="en" label="Chapters">Your browser does not support video playback.</video></div>
   <div class="video-status" data-trailer-status role="status" aria-live="polite"></div>
   <div class="video-key"><span><i class="circle"></i> ORIGINAL SOUNDTRACK + ACTUAL GAMEPLAY</span><span>01:08 · SURVIVE / ADAPT / COMMAND</span></div>
+ </section>
+ <section id="signup" class="signup wrap" aria-labelledby="signup-title">
+  <div class="signup-heading"><div><p class="section-kicker">ONE ACCOUNT · THREE WORLDS</p><h2 id="signup-title">YOUR STORY<br><span>STARTS HERE.</span></h2><p>Create a free En-Route account to sign in inside the Windows launcher. A private verification code confirms that you own your email address. No subscription or payment details required.</p></div><div class="signup-promise"><strong>EVERY MOVE COUNTS</strong><p>One username for Blitzkrieg, Ulti and Board-Cr-ft. Secure account recovery and eligible cloud saves. Account rewards and Notes activate only after the game securely verifies them.</p></div></div>
+  <div class="signup-card">
+   <div class="signup-card-head"><span>01 / ENROLL</span><span>EMAIL VERIFIED · FREE</span></div>
+   <form id="signup-form" class="signup-form" autocomplete="on">
+    <div class="signup-field"><label for="register-name">Username</label><input id="register-name" name="username" type="text" autocomplete="username" minlength="3" maxlength="24" required spellcheck="false" placeholder="Your court name"></div>
+    <div class="signup-field"><label for="register-email">Email address</label><input id="register-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"></div>
+    <div class="signup-field"><label for="register-password">Password <small>15 or more characters</small></label><input id="register-password" name="password" type="password" autocomplete="new-password" minlength="15" maxlength="128" required></div>
+    <div class="signup-field"><label for="register-confirm">Confirm password</label><input id="register-confirm" name="passwordConfirmation" type="password" autocomplete="new-password" minlength="15" maxlength="128" required></div>
+    <button type="submit" class="signup-submit">SEND VERIFICATION EMAIL</button>
+    <p class="signup-legal">Your email is used for verification and account recovery. Never share your password or verification code.</p>
+   </form>
+   <form id="verify-form" class="signup-form verify-form" hidden>
+    <h3>VERIFY YOUR EMAIL</h3><p>Enter the secure code from your En-Route verification email. It expires in 15 minutes.</p>
+    <div class="signup-field"><label for="verify-code">Verification code</label><input id="verify-code" name="code" type="text" minlength="43" maxlength="43" pattern="[A-Za-z0-9_-]{43}" autocomplete="one-time-code" spellcheck="false" required placeholder="Paste the code from your email"></div>
+    <button type="submit" class="signup-submit">VERIFY & CREATE ACCOUNT</button>
+    <button type="button" id="resend-verify" class="signup-link">Resend verification code</button>
+    <button type="button" id="restart-signup" class="signup-link">Start again</button>
+   </form>
+   <div class="signup-feedback" id="signup-feedback" role="status" aria-live="polite"></div>
+   <div id="signup-complete" class="signup-complete" hidden><strong>ACCOUNT VERIFIED</strong><p>Your En-Route account is ready. Open the Windows launcher and sign in with your username and password.</p><a href="./downloads/EnRoutePatcher.exe" class="signup-submit" download>GET THE WINDOWS LAUNCHER</a></div>
+  </div>
  </section>
  <section id="modes" class="modes wrap" aria-labelledby="modes-title">
   <div class="section-title"><div><p class="section-kicker">THREE MODES. THREE DIFFERENT WARS.</p><h2 id="modes-title">YOUR PIECES.<br><span>YOUR KIND OF CHAOS.</span></h2></div><p>Every mode changes what winning means. Pick your discipline and take the board apart.</p></div>

@@ -9,3 +9,7 @@ The production download link is not ready: `downloads/EnRoutePatcher.exe` exists
 The game's release/update infrastructure operates independently of this repository. Version 0.2.20 was the latest verified build when the media was captured on November 22, 2026.
 
 **Do not deploy or enable Pages until explicit owner approval.**
+
+## Screenshot previews
+
+[View full desktop layout](assets/preview-desktop.webp) · [View full mobile layout](assets/preview-mobile.webp)

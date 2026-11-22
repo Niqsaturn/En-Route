@@ -28,3 +28,7 @@ No production account, SQL, payment, media-hosting or game service should be cha
 - Mock browser CORS, registration and verification flow passed at 1440, 1280, 768 and 390 pixels. These tests do not establish live email delivery, live CORS, first-time launcher sign-in or public GitHub Pages availability.
 - Check the latest signed update feed before changing the version label; the observed published version was 0.2.21.
 - Preserve the original publication hold: enable Pages, merge, update DNS and promote the installer only with the owner's explicit approval.
+
+## Legacy Tailscale website retirement — verified 2026-11-22
+
+The outdated public **website-only** `/enroute` handler on the existing 8443 Tailscale ingress was removed by exact-path configuration, leaving the root handler byte-for-byte unchanged. Post-change HTTP checks: old `/enroute/` returns **404**, account `/enroute-account/healthz` returns **200**, and signed updates `/enroute-updates/latest.signed.json` returns **200**. The public API Funnel remains intentionally available for the future JavaScript signup integration. GitHub Pages remains unpublished; do not confuse retirement of the old handler with the removal of account or patch infrastructure.

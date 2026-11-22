@@ -2,7 +2,7 @@
 
 This branch holds a **review-only** static promotional website. The source is on a public GitHub branch, but **the website is not deployed**, and no GitHub Pages publishing has been configured.
 
-Browse `index.html` locally with its `assets` directory to review the new responsive design, current 0.2.20 screenshots, and gameplay montage. No website account forms, trackers, or payment flow are used.
+Browse `index.html` locally with its `assets` directory to review the new responsive design, current 0.2.20 screenshots, and gameplay montage. This prelaunch branch includes an **unpublished signup and email-verification form**. Its JavaScript submits to the existing Tailscale Funnel account API without navigating away from the GitHub Pages URL. The API's exact-origin CORS support is not deployed, so **live GitHub Pages signup is not ready**. No trackers or payment flow are included.
 
 The production download link is not ready: `downloads/EnRoutePatcher.exe` exists in the owner's *local* draft but is deliberately excluded from GitHub. The portable patcher was not Authenticode signed; produce and validate a current signed installer and replace the download URL before making the website public.
 
@@ -26,3 +26,8 @@ The game's release/update infrastructure operates independently of this reposito
 GitHub stores the large trailer as eight verified binary chunks under `assets/trailer-parts/` due the connected upload transport limit. The small, same-origin `assets/trailer-loader.js` reconstructs and SHA-256-checks the exact MP4 on a hosted site. The full MP4 is retained only in the local offline draft and production audit. **No public site has been deployed.**
 
 The build badge was refreshed to **0.2.21** after the November 22 camera/selection hotfix. Media retains its truthful **0.2.20** capture provenance.
+
+
+## GitHub Pages signup staging (2026-11-22)
+
+The review-only integration is on `prelaunch/github-pages-signup`, with `SIGNUP_INTEGRATION.md` describing the origin allowlist, service boundary, verification and publication checks. Four local browser viewport tests passed, including mocked cross-origin preflight and signup/verify while preserving the page URL. A preflight to the live account API from `https://niqsaturn.github.io` still returns HTTP 403; backend changes remain isolated in the owner's local staging area. **Do not enable GitHub Pages or merge until approval.**

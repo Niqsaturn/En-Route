@@ -21,3 +21,11 @@ A future custom domain needs a separately reviewed exact HTTPS Origin. Front-end
 3. Test registered mail delivery, verification expiry, duplicate prevention, resend throttling and launcher login using authorized test data.
 4. Confirm CSP connect-src permits the API origin when headers are set, and verify installer checksum and live HTTPS.
 5. Obtain explicit approval before publishing GitHub Pages or promoting the website and installer.
+
+## Verified staging receipt (2026-11-22)
+
+- Source committed to GitHub review branch and downloaded into isolated local preview; Node syntax check passed.
+- Four browser viewports tested against a **local mock API server on a separate origin**, with real browser CORS preflight behavior: 2 OPTIONS + 2 POST requests, signup and verification transitions passed, address unchanged, no page JavaScript errors.
+- Four backend CORS unit tests passed; separately staged account API passed Node syntax check.
+- The existing public endpoint was tested with OPTIONS only and returned HTTP 403 (no Access-Control-Allow-Origin). **This blocks live GitHub-origin registration until a reviewed backend release is deployed.** No live signup or account creation was attempted.
+- All testing leaves production account services and GitHub Pages publication unchanged.
